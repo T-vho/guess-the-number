@@ -1,1 +1,45 @@
-<h1>Guess the Number</h1>
+<html>
+<head><title>Guess the Number </title></head>
+<body>
+    <h1>Guess the Number</h1>
+    <img src= "http://blog.etundra.com/wp-content/Media/2017/01/hero_gatsbywide.jpg" alt="You did it!">
+    <script>
+        let num = Math.floor(Math.random() * 11) + 1;
+        let guess = prompt ("Guess a number between 1 and 10");
+        let counter = 0;
+        let gotIt = false;
+        let feedback = "" ;
+        let times = "times"; //plural
+        /*
+        counter = counter + 1
+
+        counter += 1
+
+        counter ++
+
+
+
+        */
+        while(gotIt == false){
+            counter += 1;
+            if(guess == num){
+                if(counter == 1){
+                    times = "time";
+                }
+
+                feedback = `Wow you got it! You guessed ${num} and it took you ${counter} ${times}😎 !`
+                alert(feedback);
+                gotIt = true;
+            }else if(guess == ""){
+                guess = prompt ("You didn't even put anything 🥸 Guess a number between 1 and 10");
+            }else if(guess < num) {
+                guess = prompt("So close! Just a little higher!😃 Guess a number between 1 and 10");
+            }else if(guess > num) {
+                guess = prompt("So close! Just a little lower!😃 Guess a number between 1 and 10");      
+           }else{
+               alert("You should not see this");
+           }
+         }
+    </script>
+</body>
+</html>
